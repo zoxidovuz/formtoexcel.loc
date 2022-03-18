@@ -27,7 +27,7 @@ if(isset($_POST['save_date'])){
         $sheet->setCellValue('B'.$i, $_POST['loan_amount'][$i-12]);
         $sheet->setCellValue('C'.$i, $_POST['loan_terms_in_years'][$i-12]);
         $sheet->setCellValue('D'.$i, $_POST['only_period'][$i-12]);
-        $sheet->setCellValue('F'.$i, $_POST['actual_interest_rate'][$i-12]);
+        $sheet->setCellValue('F'.$i, $_POST['actual_interest_rate'][$i-12]/100);
         $sheet->setCellValue('H'.$i, $_POST['investment'][$i-12]);
     }
 
@@ -47,7 +47,13 @@ if(isset($_POST['save_date'])){
         die;
     }
 
-
+    $spreadsheet = IOFactory::load("../files/{$new_excel}.xlsx");
+    $result = $spreadsheet->getActiveSheet()->getCell('G18')->getCalculatedValue();
+    $spreadsheet->getActiveSheet()->setCellValue('G18', $result);
+    $writer = IOFactory::createWriter($spreadsheet, "Xlsx");
+    $writer->setIncludeCharts(true);
+    $writer->setPreCalculateFormulas(false);
+    $writer->save('../files/' . $new_excel . '.xlsx');
 
 
     /*if($data){
@@ -56,7 +62,7 @@ if(isset($_POST['save_date'])){
         $_SESSION['status'] = "Somthing wrong!";
     }*/
 
-    $_SESSION['status'] = "Form was created successfully! You can <a href='/files/{$new_excel}.xlsx'>Download file</a>";
+    $_SESSION['status'] = "Form was created successfully! You can <a href='/files/{$new_excel}.xlsx'>Download file</a> <br> Total loan amount: {$result}";
 
     header("Location: /form.php");
 }
