@@ -5,11 +5,18 @@ require './vendor/autoload.php';
 
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
-$spreadsheet = IOFactory::load("./files/res.xlsx");
+if(!isset($_GET['file'])){
+    header('Location: index.php');
+}
+$file = $_GET['file'];
+
+$spreadsheet = IOFactory::load("./files/{$file}.xlsx");
 $sheet = $spreadsheet->getSheetByName('Sample Calculator');
 
 
-include __DIR__ . "/includes/layouts/header.php";
+
+
+
 $names = [
     "Base Income (PAYG)",
     "Overtime",
@@ -47,11 +54,12 @@ $sheet_names = [
     'Total Income',
 ];
 
-
+include __DIR__ . "/includes/layouts/header.php";
 ?>
 
 <div class="container">
     <div class="row justify-content-center">
+        <?php include __DIR__ . "/includes/layouts/alert.php"; ?>
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">

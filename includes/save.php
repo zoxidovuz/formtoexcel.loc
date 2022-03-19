@@ -46,15 +46,12 @@ if (isset($_POST['save_date'])) {
     $sheet->setCellValue('H9', $_POST['residential_status'][4]);
 
 
-
     // Loan section
     for ($i = 13; $i <= 17; $i++) {
         $sheet->setCellValue('B' . $i, $_POST['loan_amount'][$i - 12]);
-        $sheet->getStyle('B' . $i)->getNumberFormat()->setFormatCode(NumberFormat::FORMAT_CURRENCY_USD);
         $sheet->setCellValue('C' . $i, $_POST['loan_terms_in_years'][$i - 12]);
         $sheet->setCellValue('D' . $i, $_POST['only_period'][$i - 12]);
-        $sheet->setCellValue('F' . $i, $_POST['actual_interest_rate'][$i - 12]/100);
-        $sheet->getStyle('F' . $i)->getNumberFormat()->setFormatCode(NumberFormat::FORMAT_PERCENTAGE_00);
+        $sheet->setCellValue('F' . $i, $_POST['actual_interest_rate'][$i - 12] / 100);
         $sheet->setCellValue('H' . $i, $_POST['investment'][$i - 12]);
 
     }
@@ -62,28 +59,16 @@ if (isset($_POST['save_date'])) {
 
     // Set security section
 
-    for($i = 1; $i <= 5; $i++){
+    for ($i = 1; $i <= 5; $i++) {
         $sheet->setCellValue('B' . ($i + 21), $_POST['security'][$i]);
-        $sheet->getStyle('B' . ($i + 21))->getNumberFormat()->setFormatCode(NumberFormat::FORMAT_CURRENCY_USD);
     }
 
     // Is your Credit Score>699? (Y/N):
-
-    $cells = ['B', 'C', 'E', 'G'];
-
-
-
 
     $sheet->setCellValue('B30', $_POST['credit_score'][1]);
     $sheet->setCellValue('C30', $_POST['credit_score'][2]);
     $sheet->setCellValue('E30', $_POST['credit_score'][3]);
     $sheet->setCellValue('G30', $_POST['credit_score'][4]);
-
-    $sheet->getStyle('B30')->getNumberFormat()->setFormatCode(NumberFormat::FORMAT_CURRENCY_USD);
-    $sheet->getStyle('C30')->getNumberFormat()->setFormatCode(NumberFormat::FORMAT_CURRENCY_USD);
-    $sheet->getStyle('E30')->getNumberFormat()->setFormatCode(NumberFormat::FORMAT_CURRENCY_USD);
-    $sheet->getStyle('G30')->getNumberFormat()->setFormatCode(NumberFormat::FORMAT_CURRENCY_USD);
-
 
 
     // Base Income (PAYG):
@@ -96,12 +81,10 @@ if (isset($_POST['save_date'])) {
     // Overtime:
 
 
-
     $sheet->setCellValue('B32', $_POST['overtime'][1]);
     $sheet->setCellValue('C32', $_POST['overtime'][2]);
     $sheet->setCellValue('E32', $_POST['overtime'][3]);
     $sheet->setCellValue('G32', $_POST['overtime'][4]);
-
 
 
     // Bonus
@@ -134,8 +117,6 @@ if (isset($_POST['save_date'])) {
     $sheet->setCellValue('G36', $_POST['taxable_income'][4]);
 
 
-
-
     // Total Annual Rental
 
     $sheet->setCellValue('B41', $_POST['annual_rental'][1]);
@@ -146,16 +127,16 @@ if (isset($_POST['save_date'])) {
 
     // Ownership % for all new loans per individual applicant
 
-    for($i = 1; $i <= 5; $i++){
-        $sheet->setCellValue('B' . ($i + 44), $_POST['ownership_loan_app1'][$i]/100);
-        $sheet->setCellValue('C' . ($i + 44), $_POST['ownership_loan_app2'][$i]/100);
-        $sheet->setCellValue('E' . ($i + 44), $_POST['ownership_loan_app3'][$i]/100);
-        $sheet->setCellValue('G' . ($i + 44), $_POST['ownership_loan_app4'][$i]/100);
+    for ($i = 1; $i <= 5; $i++) {
+        $sheet->setCellValue('B' . ($i + 44), $_POST['ownership_loan_app1'][$i] / 100);
+        $sheet->setCellValue('C' . ($i + 44), $_POST['ownership_loan_app2'][$i] / 100);
+        $sheet->setCellValue('E' . ($i + 44), $_POST['ownership_loan_app3'][$i] / 100);
+        $sheet->setCellValue('G' . ($i + 44), $_POST['ownership_loan_app4'][$i] / 100);
     }
 
     // Annual Commitments (Existing and not be refinanced)
 
-    for($i = 1; $i <= 4; $i++){
+    for ($i = 1; $i <= 4; $i++) {
         $sheet->setCellValue('B' . ($i + 54), $_POST['existing_home_loan_limit'][$i]);
         $sheet->setCellValue('C' . ($i + 54), $_POST['existing_home_loan_loan_terms'][$i]);
         $sheet->setCellValue('D' . ($i + 54), $_POST['existing_home_loan_io_period'][$i]);
@@ -185,11 +166,11 @@ if (isset($_POST['save_date'])) {
 
     // Ownership % for all new loans per individual applicant
 
-    for($i = 1; $i <= 4; $i++){
-        $sheet->setCellValue('B' . ($i + 74), $_POST['ownership_home_loan_app_1'][$i]/100);
-        $sheet->setCellValue('C' . ($i + 74), $_POST['ownership_home_loan_app_2'][$i]/100);
-        $sheet->setCellValue('E' . ($i + 74), $_POST['ownership_home_loan_app_3'][$i]/100);
-        $sheet->setCellValue('G' . ($i + 74), $_POST['ownership_home_loan_app_4'][$i]/100);
+    for ($i = 1; $i <= 4; $i++) {
+        $sheet->setCellValue('B' . ($i + 74), $_POST['ownership_home_loan_app_1'][$i] / 100);
+        $sheet->setCellValue('C' . ($i + 74), $_POST['ownership_home_loan_app_2'][$i] / 100);
+        $sheet->setCellValue('E' . ($i + 74), $_POST['ownership_home_loan_app_3'][$i] / 100);
+        $sheet->setCellValue('G' . ($i + 74), $_POST['ownership_home_loan_app_4'][$i] / 100);
     }
 
     // Monthly Living Expenses (Combined)
@@ -198,7 +179,6 @@ if (isset($_POST['save_date'])) {
     $sheet->setCellValue('C82', $_POST['monthly_living_expensive'][2]);
     $sheet->setCellValue('E82', $_POST['monthly_living_expensive'][3]);
     $sheet->setCellValue('G82', $_POST['monthly_living_expensive'][4]);
-
 
 
     // Discretionary Living Expenses (p/m)
@@ -214,94 +194,21 @@ if (isset($_POST['save_date'])) {
     $sheet->setCellValue('I87', $_POST['monthly_property_expensive']);
 
 
+    $writer = IOFactory::createWriter($spreadsheet, 'Xlsx');
 
-
-
-//    $writer = new Xlsx($spreadsheet);
-
-    $writer = IOFactory::createWriter($spreadsheet, "Xlsx");
     $new_excel = time();
+    $writer->setPreCalculateFormulas(true);
+
     try {
-        $writer->getPreCalculateFormulas();
-        $writer->setIncludeCharts(true);
-        $writer->setPreCalculateFormulas(true);
-
         $writer->save('../files/' . $new_excel . '.xlsx');
-    } catch (\PhpOffice\PhpSpreadsheet\Writer\Exception $e) {
-        die('Error loading file: '.$e->getMessage());
+    } catch (\Exception $exception) {
+        echo "<h2>" . $exception->getMessage() . "</h2>";
+        die;
     }
 
-
-    // Rewrite calculate data
-    /*$spreadsheet = IOFactory::load("../files/{$new_excel}.xlsx");
-
-    $spreadsheet->getActiveSheet()->setCellValue('G18', $spreadsheet->getActiveSheet()->getCell('G18')->getCalculatedValue());
-    $spreadsheet->getActiveSheet()->setCellValue('C27', $spreadsheet->getActiveSheet()->getCell('C27')->getCalculatedValue());
-    $spreadsheet->getActiveSheet()->setCellValue('G27', $spreadsheet->getActiveSheet()->getCell('G27')->getCalculatedValue());
-    $spreadsheet->getActiveSheet()->setCellValue('I31', $spreadsheet->getActiveSheet()->getCell('I31')->getCalculatedValue());
-    $spreadsheet->getActiveSheet()->setCellValue('I32', $spreadsheet->getActiveSheet()->getCell('I32')->getCalculatedValue());
-    $spreadsheet->getActiveSheet()->setCellValue('I33', $spreadsheet->getActiveSheet()->getCell('I33')->getCalculatedValue());
-    $spreadsheet->getActiveSheet()->setCellValue('I34', $spreadsheet->getActiveSheet()->getCell('I34')->getCalculatedValue());
-    $spreadsheet->getActiveSheet()->setCellValue('I35', $spreadsheet->getActiveSheet()->getCell('I35')->getCalculatedValue());
-    $spreadsheet->getActiveSheet()->setCellValue('I36', $spreadsheet->getActiveSheet()->getCell('I36')->getCalculatedValue());
-
-
-    $spreadsheet->getActiveSheet()->setCellValue('B37', $spreadsheet->getActiveSheet()->getCell('B37')->getCalculatedValue());
-    $spreadsheet->getActiveSheet()->setCellValue('C37', $spreadsheet->getActiveSheet()->getCell('C37')->getCalculatedValue());
-    $spreadsheet->getActiveSheet()->setCellValue('E37', $spreadsheet->getActiveSheet()->getCell('E37')->getCalculatedValue());
-    $spreadsheet->getActiveSheet()->setCellValue('G37', $spreadsheet->getActiveSheet()->getCell('G37')->getCalculatedValue());
-    $spreadsheet->getActiveSheet()->setCellValue('I37', $spreadsheet->getActiveSheet()->getCell('I37')->getCalculatedValue());
-    $spreadsheet->getActiveSheet()->setCellValue('I41', $spreadsheet->getActiveSheet()->getCell('I41')->getCalculatedValue());
-
-    for($i = 45; $i <= 51; $i++){
-        $spreadsheet->getActiveSheet()->setCellValue('I' . $i, $spreadsheet->getActiveSheet()->getCell('I' . $i)->getCalculatedValue());
-    }
-
-    for($i = 55; $i <= 67; $i++){
-        $spreadsheet->getActiveSheet()->setCellValue('I' . $i, $spreadsheet->getActiveSheet()->getCell('I' . $i)->getCalculatedValue());
-    }
-
-    $spreadsheet->getActiveSheet()->setCellValue('B65', $spreadsheet->getActiveSheet()->getCell('B65')->getCalculatedValue());
-    $spreadsheet->getActiveSheet()->setCellValue('I71', $spreadsheet->getActiveSheet()->getCell('I71')->getCalculatedValue());
-
-    $spreadsheet->getActiveSheet()->setCellValue('I71', $spreadsheet->getActiveSheet()->getCell('I71')->getCalculatedValue());
-    $spreadsheet->getActiveSheet()->setCellValue('I75', $spreadsheet->getActiveSheet()->getCell('I75')->getCalculatedValue());
-    $spreadsheet->getActiveSheet()->setCellValue('I76', $spreadsheet->getActiveSheet()->getCell('I76')->getCalculatedValue());
-    $spreadsheet->getActiveSheet()->setCellValue('I77', $spreadsheet->getActiveSheet()->getCell('I77')->getCalculatedValue());
-    $spreadsheet->getActiveSheet()->setCellValue('I78', $spreadsheet->getActiveSheet()->getCell('I78')->getCalculatedValue());
-    $spreadsheet->getActiveSheet()->setCellValue('I79', $spreadsheet->getActiveSheet()->getCell('I79')->getCalculatedValue());
-
-    $spreadsheet->getActiveSheet()->setCellValue('I82', $spreadsheet->getActiveSheet()->getCell('I82')->getCalculatedValue());
-    $spreadsheet->getActiveSheet()->setCellValue('I83', $spreadsheet->getActiveSheet()->getCell('I83')->getCalculatedValue());
-    $spreadsheet->getActiveSheet()->setCellValue('I84', $spreadsheet->getActiveSheet()->getCell('I84')->getCalculatedValue());
-
-    $spreadsheet->getActiveSheet()->setCellValue('B84', $spreadsheet->getActiveSheet()->getCell('B84')->getCalculatedValue());
-    $spreadsheet->getActiveSheet()->setCellValue('C84', $spreadsheet->getActiveSheet()->getCell('C84')->getCalculatedValue());
-    $spreadsheet->getActiveSheet()->setCellValue('E84', $spreadsheet->getActiveSheet()->getCell('E84')->getCalculatedValue());
-    $spreadsheet->getActiveSheet()->setCellValue('G84', $spreadsheet->getActiveSheet()->getCell('G84')->getCalculatedValue());
-
-    $spreadsheet->getActiveSheet()->setCellValue('I88', $spreadsheet->getActiveSheet()->getCell('I88')->getCalculatedValue());
-
-    // Final result
-
-    $spreadsheet->getActiveSheet()->setCellValue('B92', $spreadsheet->getActiveSheet()->getCell('B92')->getCalculatedValue());
-    $spreadsheet->getActiveSheet()->setCellValue('D92', $spreadsheet->getActiveSheet()->getCell('D92')->getCalculatedValue());
-    $spreadsheet->getActiveSheet()->setCellValue('F92', $spreadsheet->getActiveSheet()->getCell('F92')->getCalculatedValue());
-    $spreadsheet->getActiveSheet()->setCellValue('H92', $spreadsheet->getActiveSheet()->getCell('H92')->getCalculatedValue());
-
-
-    $writer = IOFactory::createWriter($spreadsheet, "Xlsx");
-    $writer->setPreCalculateFormulas(false);
-    $writer->save('../files/' . $new_excel . '.xlsx');*/
-
-
-    /*if($data){
-        $_SESSION['status'] = "Contact updated successfuly!";
-    }else{
-        $_SESSION['status'] = "Somthing wrong!";
-    }*/
 
     $_SESSION['status'] = "Form was created successfully! You can <a href='/files/{$new_excel}.xlsx'>Download file</a>";
 
-    header("Location: /form.php");
+    header("Location: /print.php?file=" . $new_excel);
+    die;
 }
