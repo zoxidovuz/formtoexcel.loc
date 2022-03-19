@@ -93,26 +93,38 @@ include __DIR__ . "/includes/layouts/header.php";
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
-                                                <input type="text" name="couple_with_other_applicants[1]"
-                                                       class="form-control">
+                                                <select name="couple_with_other_applicants[1]" id="" class="form-control" required>
+                                                    <option value="" selected disabled>Select</option>
+                                                    <option value="N/A">N/A</option>
+                                                    <option value="Non-loan party">Non-loan party</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
-                                                <input type="text" name="couple_with_other_applicants[2]"
-                                                       class="form-control">
+                                                <select name="couple_with_other_applicants[2]" id="" class="form-control" required>
+                                                    <option value="" selected disabled>Select</option>
+                                                    <option value="N/A">N/A</option>
+                                                    <option value="Non-loan party">Non-loan party</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
-                                                <input type="text" name="couple_with_other_applicants[3]"
-                                                       class="form-control">
+                                                <select name="couple_with_other_applicants[3]" id="" class="form-control" required>
+                                                    <option value="" selected disabled>Select</option>
+                                                    <option value="N/A">N/A</option>
+                                                    <option value="Non-loan party">Non-loan party</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
-                                                <input type="text" name="couple_with_other_applicants[4]"
-                                                       class="form-control">
+                                                <select name="couple_with_other_applicants[4]" id="" class="form-control" required>
+                                                    <option value="" selected disabled>Select</option>
+                                                    <option value="N/A">N/A</option>
+                                                    <option value="Non-loan party">Non-loan party</option>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
