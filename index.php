@@ -15,7 +15,7 @@ include __DIR__ . "/includes/layouts/header.php";
                     <div class="card-header">
                         <h4>Form to excel
                             <div class="float-end">
-                                <a href="/print.php" class="btn btn-primary">Table example</a>
+                                <a href="/print.php?file=res" class="btn btn-primary">Table example</a>
                                 <a href="/form.php" class="btn btn-primary mr-5">Create</a>
                             </div>
                         </h4>
