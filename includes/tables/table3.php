@@ -5,21 +5,21 @@
  */
 
 $rows = [
-    'BW',
-    'BX',
-    'BY',
-    'BZ',
-    'CA',
-    'CB',
-    'CC',
-    'CD',
-    'CE',
-    'CF',
-    'CG',
-    'CH',
-    'CI',
-    'CJ',
-    'CK',
+    'AQ',
+    'AR',
+    'AS',
+    'AT',
+    'AU',
+    'AV',
+    'AW',
+    'AX',
+    'AY',
+    'AZ',
+    'BA',
+    'BB',
+    'BC',
+    'BD',
+    'BE',
 ];
 
 ?>
@@ -29,14 +29,14 @@ $rows = [
         <thead>
         <tr>
             <th class="cell-200"></th>
-            <td class="cell-100">Plus (< 700)</td>
-            <td class="cell-100">Plus (< 700)</td>
-            <td class="cell-100">Plus (< 700)</td>
-            <td class="cell-100">Plus (< 700)</td>
-            <td class="cell-100">Plus (< 700)</td>
-            <td class="cell-100">Plus (< 700)</td>
-            <td class="cell-100">Plus (< 700)</td>
-            <td class="cell-100">Plus (< 700)</td>
+            <td class="cell-100">Prime</td>
+            <td class="cell-100">Prime</td>
+            <td class="cell-100">Prime</td>
+            <td class="cell-100">Prime</td>
+            <td class="cell-100">Prime</td>
+            <td class="cell-100">Prime</td>
+            <td class="cell-100">Prime</td>
+            <td class="cell-100">Prime</td>
             <td class="cell-100">Applicant 1</td>
             <td class="cell-100">Applicant 1</td>
             <td class="cell-100">Applicant 1</td>
@@ -65,16 +65,14 @@ $rows = [
         </tr>
         </thead>
         <tbody>
-        <?php $i = 6;
-        foreach ($names as $name): ?>
+        <?php $i = 6; foreach ($names as $name): ?>
             <tr>
                 <td><?= $name ?></td>
-                <?php
-                foreach ($rows as $row): ?>
+                <?php foreach ($rows as $row): ?>
                     <td><?= $sheet->getCell($row . $i)->getOldCalculatedValue() ?></td>
                 <?php endforeach; ?>
             </tr>
-            <?php $i++; endforeach; ?>
+        <?php $i++; endforeach; ?>
         </tbody>
     </table>
 </div>

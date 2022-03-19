@@ -1,12 +1,31 @@
 <?php
 /**
  * @var $names
+ * @var $sheet
  */
+
+$rows = [
+    'CM',
+    'CN',
+    'CO',
+    'CP',
+    'CQ',
+    'CR',
+    'CS',
+    'CT',
+    'CU',
+    'CV',
+    'CW',
+    'CX',
+    'CY',
+    'CZ',
+    'DA',
+];
 
 ?>
 
 <div class="table-responsive">
-    <table class="table table-striped">
+    <table class="table table-striped table-bordered">
         <thead>
         <tr>
             <th class="cell-200"></th>
@@ -46,14 +65,16 @@
         </tr>
         </thead>
         <tbody>
-        <?php foreach($names as $name):?>
+        <?php $i = 6;
+        foreach ($names as $name): ?>
             <tr>
-                <td><?= $name?></td>
-                <?php for($i = 1; $i <= 15; $i++):?>
-                    <td>$ -</td>
-                <?php endfor;?>
+                <td><?= $name ?></td>
+                <?php
+                foreach ($rows as $row): ?>
+                    <td><?= $sheet->getCell($row . $i)->getOldCalculatedValue() ?></td>
+                <?php endforeach; ?>
             </tr>
-        <?php endforeach;?>
+            <?php $i++; endforeach; ?>
         </tbody>
     </table>
 </div>

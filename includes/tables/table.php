@@ -1,3 +1,12 @@
+<?php
+/**
+ * @var $sheet
+ * @var $sheet_names
+ */
+
+
+?>
+
 <div class="table-responsive">
     <table class="table table-striped">
         <thead>
@@ -8,7 +17,7 @@
         <tbody>
         <tr>
             <th style="width: 20%">Applicant Names:</th>
-            <th colspan="8"></th>
+            <th colspan="8"><?= $sheet->getCell('B4')->getValue()?></th>
 
         </tr>
         <tr>
@@ -20,110 +29,74 @@
         </tr>
         <tr>
             <td>Applicant Status:</td>
-            <td colspan="2">Individual single</td>
-            <td colspan="2">Individual Couple</td>
-            <td colspan="2">Individual Couple</td>
-            <td colspan="2">Individual Couple</td>
+            <td colspan="2"><?= $sheet->getCell('B6')->getValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('D6')->getValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('F6')->getValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('H6')->getValue()?></td>
         </tr>
         <tr>
             <td>Couple with other Applicants:</td>
-            <td colspan="2">Individual single</td>
-            <td colspan="2">Individual Couple</td>
-            <td colspan="2">Individual Couple</td>
-            <td colspan="2">Individual Couple</td>
+            <td colspan="2"><?= $sheet->getCell('B7')->getValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('D7')->getValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('F7')->getValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('H7')->getValue()?></td>
         </tr>
         <tr>
             <td>Number of Dependents:</td>
-            <td colspan="2">Individual single</td>
-            <td colspan="2">Individual Couple</td>
-            <td colspan="2">Individual Couple</td>
-            <td colspan="2">Individual Couple</td>
+            <td colspan="2"><?= $sheet->getCell('B8')->getValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('D8')->getValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('F8')->getValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('H8')->getValue()?></td>
         </tr>
         <tr>
             <td>Residential Status:</td>
-            <td colspan="2">Individual single</td>
-            <td colspan="2">Individual Couple</td>
-            <td colspan="2">Individual Couple</td>
-            <td colspan="2">Individual Couple</td>
+            <td colspan="2"><?= $sheet->getCell('B9')->getValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('D9')->getValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('F9')->getValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('H9')->getValue()?></td>
         </tr>
 
         <tr>
             <th style="width: 20%">New Loan</th>
-            <th colspan="8"></th>
+            <th >Loan Amount</th>
+            <th colspan="2">Loan Terms in Years</th>
+            <th colspan="2">Int. Only Period</th>
+            <th colspan="2">Actual Interest Rate</th>
+            <th >Investment (Y/N)</th>
         </tr>
 
-        <tr>
-            <td>Loan 1</td>
-            <td >3</td>
-            <td colspan="2">25</td>
-            <td colspan="2">89</td>
-            <td colspan="2">12%</td>
-            <td >Y</td>
-        </tr>
-        <tr>
-            <td>Loan 2</td>
-            <td >3</td>
-            <td colspan="2">25</td>
-            <td colspan="2">89</td>
-            <td colspan="2">12%</td>
-            <td >Y</td>
-        </tr>
-        <tr>
-            <td>Loan 3</td>
-            <td >3</td>
-            <td colspan="2">25</td>
-            <td colspan="2">89</td>
-            <td colspan="2">12%</td>
-            <td >Y</td>
-        </tr>
-        <tr>
-            <td>Loan 4</td>
-            <td >3</td>
-            <td colspan="2">25</td>
-            <td colspan="2">89</td>
-            <td colspan="2">12%</td>
-            <td >Y</td>
-        </tr>
-        <tr>
-            <td>Loan 5</td>
-            <td >3</td>
-            <td colspan="2">25</td>
-            <td colspan="2">89</td>
-            <td colspan="2">12%</td>
-            <td >Y</td>
-        </tr>
+        <?php for($i = 1; $i <= 5; $i++): ?>
+            <tr>
+                <td>Loan <?= $i?></td>
+                <td ><?= $sheet->getCell('B' . (12 + $i))->getFormattedValue()?></td>
+                <td colspan="2"><?= $sheet->getCell('C' . (12 + $i))->getValue()?></td>
+                <td colspan="2"><?= $sheet->getCell('D' . (12 + $i))->getValue()?></td>
+                <td colspan="2"><?= $sheet->getCell('F' . (12 + $i))->getFormattedValue()?></td>
+                <td ><?= $sheet->getCell('H' . (12 + $i))->getValue()?></td>
+            </tr>
+        <?php endfor;?>
 
         <tr>
             <td colspan="5">Total Loan Amounts</td>
-            <td colspan="4">3</td>
+            <td colspan="4"><?= $sheet->getCell('G18')->getFormattedValue()?></td>
         </tr>
 
         <tr>
             <th>Securities Proposed (Offered to Well- Nigh)</th>
             <th colspan="8"></th>
         </tr>
+        <?php for($i = 1; $i <= 5; $i++): ?>
+            <tr>
+                <td>Security <?= $i?></td>
+                <td colspan="8"><?= $sheet->getCell('B' . (21 + $i))->getFormattedValue()?></td>
+            </tr>
+        <?php endfor;?>
 
         <tr>
-            <td>Security 1</td>
-            <td colspan="8">3</td>
-        </tr>
-        <tr>
-            <td>Security 2</td>
-            <td colspan="8">3</td>
-        </tr>
-        <tr>
-            <td>Security 3</td>
-            <td colspan="8">3</td>
-        </tr>
-        <tr>
-            <td>Security 4</td>
-            <td colspan="8">3</td>
-        </tr>
-        <tr>
             <td >Total Security Value</td>
-            <td colspan="2"> $15</td>
+            <td colspan="2"> <?= $sheet->getCell('C27')->getFormattedValue()?></td>
             <td colspan="3">LVR</td>
-            <td colspan="3"> 73%</td>
+            <td colspan="3"> <?= $sheet->getCell('G27')->getFormattedValue()?></td>
         </tr>
 
         <tr>
@@ -134,73 +107,18 @@
             <th colspan="2">Applicant 1</th>
             <th >Total</th>
         </tr>
+        <?php $i = 30; foreach ($sheet_names as $name): ?>
+            <tr>
+                <td><?= $name?></td>
+                <td ><?= $sheet->getCell('B' . $i)->getFormattedValue()?></td>
+                <td colspan="2"><?= $sheet->getCell('C' . $i)->getFormattedValue()?></td>
+                <td colspan="2"><?= $sheet->getCell('E' . $i)->getFormattedValue()?></td>
+                <td colspan="2"><?= $sheet->getCell('G' . $i)->getFormattedValue()?></td>
+                <td ><?= $sheet->getCell('I' . $i)->getFormattedValue()?></td>
+            </tr>
+        <?php $i++; endforeach; ?>
 
-        <tr>
-            <td>Is your Credit Score>699? (Y/N):</td>
-            <td >Y</td>
-            <td colspan="2">Y</td>
-            <td colspan="2">Y</td>
-            <td colspan="2">Y</td>
-            <td ></td>
-        </tr>
 
-        <tr>
-            <td>Base Income (PAYG):</td>
-            <td >$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td >$00,00</td>
-        </tr>
-        <tr>
-            <td>Overtime:</td>
-            <td >$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td >$00,00</td>
-        </tr>
-
-        <tr>
-            <td>Bonus:</td>
-            <td >$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td >$00,00</td>
-        </tr>
-        <tr>
-            <td>Commission:</td>
-            <td >$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td >$00,00</td>
-        </tr>
-        <tr>
-            <td>Share Dividend income:</td>
-            <td >$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td >$00,00</td>
-        </tr>
-        <tr>
-            <td>Non-taxable Income:</td>
-            <td >$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td >$00,00</td>
-        </tr>
-        <tr>
-            <td>Total Income:</td>
-            <td >$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td >$00,00</td>
-        </tr>
 
         <tr>
             <th style="width: 20%">Rental income for all new loans offered to Well Nigh</th>
@@ -218,11 +136,11 @@
 
         <tr>
             <td>Total Annual Rental:</td>
-            <td >$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td >$00,00</td>
+            <td ><?= $sheet->getCell('B41')->getFormattedValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('C41')->getFormattedValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('E41')->getFormattedValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('G41')->getFormattedValue()?></td>
+            <td ><?= $sheet->getCell('I41')->getFormattedValue()?></td>
         </tr>
 
         <tr>
@@ -238,46 +156,24 @@
             <th colspan="2">Applicant 1 % Share</th>
             <th >Total</th>
         </tr>
-        <tr>
-            <td>Loan 1:</td>
-            <td >$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td >$00,00</td>
-        </tr>
-        <tr>
-            <td>Loan 2:</td>
-            <td >$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td >$00,00</td>
-        </tr>
-        <tr>
-            <td>Loan 3:</td>
-            <td >$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td >$00,00</td>
-        </tr>
-        <tr>
-            <td>Loan 4:</td>
-            <td>$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td >$00,00</td>
-        </tr>
+        <?php for($i = 45; $i <= 49; $i++): ?>
+            <tr>
+                <td>Loan <?= $i - 44?></td>
+                <td ><?= $sheet->getCell('B' . $i)->getFormattedValue()?></td>
+                <td colspan="2"><?= $sheet->getCell('C' . $i)->getFormattedValue()?></td>
+                <td colspan="2"><?= $sheet->getCell('E' . $i)->getFormattedValue()?></td>
+                <td colspan="2"><?= $sheet->getCell('G' . $i)->getFormattedValue()?></td>
+                <td ><?= $sheet->getCell('I' . $i)->getFormattedValue()?></td>
+            </tr>
+        <?php endfor;?>
         <tr>
             <td colspan="8">Total Tax Deductibility</td>
-            <td >$00,00</td>
+            <td ><?= $sheet->getCell('I50' )->getFormattedValue()?></td>
         </tr>
 
         <tr>
-            <td colspan="5">This loan @ assessment rate</td>
-            <td colspan="4">$00,00</td>
+            <td colspan="8">This loan @ assessment rate</td>
+            <td><?= $sheet->getCell('I51' )->getFormattedValue()?></td>
         </tr>
 
         <tr>
@@ -297,104 +193,70 @@
             <th >Monthly</th>
         </tr>
 
-        <tr>
-            <td>Existing home loan 1:</td>
-            <td >0</td>
-            <td >0</td>
-            <td >0</td>
-            <td >0</td>
-            <td >0</td>
-            <td >0</td>
-            <td >0</td>
-            <td >0</td>
-        </tr>
-
-        <tr>
-            <td>Existing home loan 2:</td>
-            <td >0</td>
-            <td >0</td>
-            <td >0</td>
-            <td >0</td>
-            <td >0</td>
-            <td >0</td>
-            <td >0</td>
-            <td >0</td>
-        </tr>
-
-        <tr>
-            <td>Existing home loan 3:</td>
-            <td >0</td>
-            <td >0</td>
-            <td >0</td>
-            <td >0</td>
-            <td >0</td>
-            <td >0</td>
-            <td >0</td>
-            <td >0</td>
-        </tr>
-
-        <tr>
-            <td>Existing home loan 4:</td>
-            <td >0</td>
-            <td >0</td>
-            <td >0</td>
-            <td >0</td>
-            <td >0</td>
-            <td >0</td>
-            <td >0</td>
-            <td >0</td>
-        </tr>
+        <?php for($i = 55; $i <= 58; $i++): ?>
+            <tr>
+                <td>Existing home loan <?= $i - 54?></td>
+                <td ><?= $sheet->getCell('B' . $i)->getFormattedValue()?></td>
+                <td ><?= $sheet->getCell('C' . $i)->getFormattedValue()?></td>
+                <td ><?= $sheet->getCell('D' . $i)->getFormattedValue()?></td>
+                <td ><?= $sheet->getCell('E' . $i)->getFormattedValue()?></td>
+                <td ><?= $sheet->getCell('F' . $i)->getFormattedValue()?></td>
+                <td ><?= $sheet->getCell('G' . $i)->getFormattedValue()?></td>
+                <td ><?= $sheet->getCell('H' . $i)->getFormattedValue()?></td>
+                <td ><?= $sheet->getCell('I' . $i)->getFormattedValue()?></td>
+            </tr>
+        <?php endfor;?>
 
         <tr>
             <td>Monthly Personal Loan Repayment:</td>
-            <td colspan="7">0</td>
-            <td>0</td>
+            <td colspan="7"><?= $sheet->getCell('B59')->getFormattedValue()?></td>
+            <td><?= $sheet->getCell('I59')->getFormattedValue()?></td>
         </tr>
 
         <tr>
             <td>Monthly Hire Purchase:</td>
-            <td colspan="7">0</td>
-            <td>0</td>
+            <td colspan="7"><?= $sheet->getCell('B60')->getFormattedValue()?></td>
+            <td><?= $sheet->getCell('I60')->getFormattedValue()?></td>
         </tr>
 
         <tr>
             <td>Monthly Leaser / Car loan:</td>
-            <td colspan="7">0</td>
-            <td>0</td>
+            <td colspan="7"><?= $sheet->getCell('B61')->getFormattedValue()?></td>
+            <td><?= $sheet->getCell('I61')->getFormattedValue()?></td>
         </tr>
 
         <tr>
             <td>Monthly Other Debts:</td>
-            <td colspan="7">0</td>
-            <td>0</td>
+            <td colspan="7"><?= $sheet->getCell('B62')->getFormattedValue()?></td>
+            <td><?= $sheet->getCell('I62')->getFormattedValue()?></td>
         </tr>
 
         <tr>
             <td>Monthly Margin / Terms / Other Loans:</td>
-            <td colspan="7">0</td>
-            <td>0</td>
+            <td colspan="7"><?= $sheet->getCell('B63')->getFormattedValue()?></td>
+            <td><?= $sheet->getCell('I63')->getFormattedValue()?></td>
         </tr>
 
         <tr>
             <td>Credit card total limits:</td>
-            <td colspan="7">0</td>
-            <td>0</td>
+            <td colspan="7"><?= $sheet->getCell('B64')->getFormattedValue()?></td>
+            <td><?= $sheet->getCell('I64')->getFormattedValue()?></td>
         </tr>
 
         <tr>
             <td>Notional Rent:</td>
-            <td colspan="7">0</td>
-            <td>0</td>
+            <td colspan="7"><?= $sheet->getCell('B65')->getFormattedValue()?></td>
+            <td><?= $sheet->getCell('I65')->getFormattedValue()?></td>
         </tr>
 
         <tr>
             <td>Other Monthly Repayments:</td>
-            <td colspan="7">0</td>
-            <td>0</td>
+            <td colspan="7"><?= $sheet->getCell('B66')->getFormattedValue()?></td>
+            <td><?= $sheet->getCell('I66')->getFormattedValue()?></td>
         </tr>
         <tr>
             <td colspan="8">Total Monthly Outings</td>
-            <td>0</td>
+            <td><?= $sheet->getCell('I67')->getFormattedValue()?></td>
         </tr>
 
         <tr>
@@ -412,11 +274,11 @@
         </tr>
         <tr>
             <td>Total Annual Rental:</td>
-            <td >0</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td >$00,00</td>
+            <td ><?= $sheet->getCell('B71')->getFormattedValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('C71')->getFormattedValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('E71')->getFormattedValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('G71')->getFormattedValue()?></td>
+            <td ><?= $sheet->getCell('I71')->getFormattedValue()?></td>
         </tr>
 
         <tr>
@@ -432,49 +294,20 @@
             <th colspan="2">Applicant 1</th>
             <th >Total</th>
         </tr>
-        <tr>
-            <td>Existing home loan 1:</td>
-            <td >0</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td >$00,00</td>
-        </tr>
-        <tr>
-            <td>Existing home loan 1:</td>
-            <td >0</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td >$00,00</td>
-        </tr>
-        <tr>
-            <td>Existing home loan 2:</td>
-            <td >0</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td >$00,00</td>
-        </tr>
-        <tr>
-            <td>Existing home loan 3:</td>
-            <td >0</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td >$00,00</td>
-        </tr>
-        <tr>
-            <td>Existing home loan 4:</td>
-            <td >0</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td >$00,00</td>
-        </tr>
+        <?php for($i = 75; $i <= 78; $i++): ?>
+            <tr>
+                <td>Existing home loan <?= $i - 74?></td>
+                <td ><?= $sheet->getCell('B' . $i)->getFormattedValue()?></td>
+                <td colspan="2"><?= $sheet->getCell('C' . $i)->getFormattedValue()?></td>
+                <td colspan="2"><?= $sheet->getCell('E' . $i)->getFormattedValue()?></td>
+                <td colspan="2"><?= $sheet->getCell('G' . $i)->getFormattedValue()?></td>
+                <td ><?= $sheet->getCell('I' . $i)->getFormattedValue()?></td>
+            </tr>
+        <?php endfor;?>
+
         <tr>
             <th colspan="8">Total Tax Deductibility</th>
-            <th >0</th>
+            <th ><?= $sheet->getCell('I79')->getFormattedValue()?></th>
         </tr>
 
         <tr>
@@ -484,27 +317,27 @@
 
         <tr>
             <td>Basic living Expenses (p/m):</td>
-            <td >0</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td >$00,00</td>
+            <td ><?= $sheet->getCell('B82')->getFormattedValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('C82')->getFormattedValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('E82')->getFormattedValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('G82')->getFormattedValue()?></td>
+            <td ><?= $sheet->getCell('I82')->getFormattedValue()?></td>
         </tr>
         <tr>
             <td>Discretionary Living Expenses (p/m):</td>
-            <td >0</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td >$00,00</td>
+            <td ><?= $sheet->getCell('B83')->getFormattedValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('C83')->getFormattedValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('E83')->getFormattedValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('G83')->getFormattedValue()?></td>
+            <td ><?= $sheet->getCell('I83')->getFormattedValue()?></td>
         </tr>
         <tr>
             <td>Total (p/m)</td>
-            <td >0</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td colspan="2">$00,00</td>
-            <td >$00,00</td>
+            <td ><?= $sheet->getCell('B82')->getFormattedValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('C82')->getFormattedValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('E82')->getFormattedValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('G82')->getFormattedValue()?></td>
+            <td ><?= $sheet->getCell('I82')->getFormattedValue()?></td>
         </tr>
 
         <tr>
@@ -514,11 +347,11 @@
 
         <tr>
             <td colspan="8">Total Monthly property expenses (New and existing)</td>
-            <td >$0</td>
+            <td ><?= $sheet->getCell('I87')->getFormattedValue()?></td>
         </tr>
         <tr>
             <td colspan="8">Total Annual property expenses (New and existing)</td>
-            <td >$0</td>
+            <td ><?= $sheet->getCell('I88')->getFormattedValue()?></td>
         </tr>
 
         <tr>
@@ -534,10 +367,10 @@
             <th colspan="2">Flex</th>
         </tr>
         <tr>
-            <td colspan="2">Ultra Prime</td>
-            <td colspan="2">Prime</td>
-            <td colspan="2">Plus</td>
-            <td colspan="2">Flex</td>
+            <td colspan="2"><?= $sheet->getCell('B92')->getValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('D92')->getValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('F92')->getValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('H92')->getValue()?></td>
         </tr>
         </tbody>
     </table>

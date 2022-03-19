@@ -224,7 +224,7 @@ if (isset($_POST['save_date'])) {
     try {
         $writer->getPreCalculateFormulas();
         $writer->setIncludeCharts(true);
-        $writer->setPreCalculateFormulas(false);
+        $writer->setPreCalculateFormulas(true);
 
         $writer->save('../files/' . $new_excel . '.xlsx');
     } catch (\PhpOffice\PhpSpreadsheet\Writer\Exception $e) {
