@@ -198,7 +198,7 @@ if (isset($_POST['save_date'])) {
 
     $sheet->calculateWorksheetDataDimension();
     $new_excel = time();
-    $writer->setPreCalculateFormulas(true);
+    $writer->setPreCalculateFormulas(false);
 
     try {
         $writer->save('../files/' . $new_excel . '.xlsx');
