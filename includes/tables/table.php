@@ -367,10 +367,10 @@
             <th colspan="2">Flex</th>
         </tr>
         <tr>
-            <td colspan="2"><?= $sheet->getCell('B92')->getValue()?></td>
-            <td colspan="2"><?= $sheet->getCell('D92')->getValue()?></td>
-            <td colspan="2"><?= $sheet->getCell('F92')->getValue()?></td>
-            <td colspan="2"><?= $sheet->getCell('H92')->getValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('B92')->getOldCalculatedValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('D92')->getOldCalculatedValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('F92')->getOldCalculatedValue()?></td>
+            <td colspan="2"><?= $sheet->getCell('H92')->getOldCalculatedValue()?></td>
         </tr>
         </tbody>
     </table>

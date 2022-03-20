@@ -22,7 +22,7 @@ include __DIR__ . "/includes/layouts/header.php";
                                     <div class="form-group mb-3 row">
                                         <label for="" class="col-md-2">Applicant Names</label>
                                         <div class="col-md-10">
-                                            <input type="text" name="applicant_name" class="form-control " required>
+                                            <input type="text" name="applicant_name" class="form-control " >
                                         </div>
                                     </div>
                                 </div>
@@ -45,7 +45,7 @@ include __DIR__ . "/includes/layouts/header.php";
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
-                                                <select name="applicant_status[1]" id="" class="form-control" required>
+                                                <select name="applicant_status[1]" id="" class="form-control" data-key="1">
                                                     <option value="" selected disabled>Select</option>
                                                     <option value="Company">Company</option>
                                                     <option value="Individual (Single)">Individual (Single)</option>
@@ -55,7 +55,7 @@ include __DIR__ . "/includes/layouts/header.php";
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
-                                                <select name="applicant_status[2]" id="" class="form-control" required>
+                                                <select name="applicant_status[2]" id="" class="form-control" data-key="2">
                                                     <option value="" selected disabled>Select</option>
                                                     <option value="Company">Company</option>
                                                     <option value="Individual (Single)">Individual (Single)</option>
@@ -65,7 +65,7 @@ include __DIR__ . "/includes/layouts/header.php";
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
-                                                <select name="applicant_status[3]" id="" class="form-control" required>
+                                                <select name="applicant_status[3]" id="" class="form-control" data-key="3">
                                                     <option value="" selected disabled>Select</option>
                                                     <option value="Company">Company</option>
                                                     <option value="Individual (Single)">Individual (Single)</option>
@@ -75,7 +75,7 @@ include __DIR__ . "/includes/layouts/header.php";
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
-                                                <select name="applicant_status[4]" id="" class="form-control" required>
+                                                <select name="applicant_status[4]" id="" class="form-control" data-key="4">
                                                     <option value="" selected disabled>Select</option>
                                                     <option value="Company">Company</option>
                                                     <option value="Individual (Single)">Individual (Single)</option>
@@ -93,7 +93,7 @@ include __DIR__ . "/includes/layouts/header.php";
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
-                                                <select name="couple_with_other_applicants[1]" id="" class="form-control" required>
+                                                <select name="couple_with_other_applicants[1]" id="applicant_status[1]" class="form-control" >
                                                     <option value="" selected disabled>Select</option>
                                                     <option value="N/A">N/A</option>
                                                     <option value="Non-loan party">Non-loan party</option>
@@ -102,7 +102,7 @@ include __DIR__ . "/includes/layouts/header.php";
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
-                                                <select name="couple_with_other_applicants[2]" id="" class="form-control" required>
+                                                <select name="couple_with_other_applicants[2]" id="applicant_status[2]" class="form-control" >
                                                     <option value="" selected disabled>Select</option>
                                                     <option value="N/A">N/A</option>
                                                     <option value="Non-loan party">Non-loan party</option>
@@ -111,7 +111,7 @@ include __DIR__ . "/includes/layouts/header.php";
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
-                                                <select name="couple_with_other_applicants[3]" id="" class="form-control" required>
+                                                <select name="couple_with_other_applicants[3]" id="applicant_status[3]" class="form-control" >
                                                     <option value="" selected disabled>Select</option>
                                                     <option value="N/A">N/A</option>
                                                     <option value="Non-loan party">Non-loan party</option>
@@ -120,7 +120,7 @@ include __DIR__ . "/includes/layouts/header.php";
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
-                                                <select name="couple_with_other_applicants[4]" id="" class="form-control" required>
+                                                <select name="couple_with_other_applicants[4]" id="applicant_status[4]" class="form-control" >
                                                     <option value="" selected disabled>Select</option>
                                                     <option value="N/A">N/A</option>
                                                     <option value="Non-loan party">Non-loan party</option>
@@ -137,7 +137,7 @@ include __DIR__ . "/includes/layouts/header.php";
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
-                                                <select name="number_of_dependents[1]" id="" class="form-control" required>
+                                                <select name="number_of_dependents[1]" id="" class="form-control" >
                                                     <option value="" selected disabled>Select</option>
                                                     <?php for($i = 0; $i <= 10; $i++): ?>
                                                     <option value="<?= $i?>"><?= $i?></option>
@@ -147,7 +147,7 @@ include __DIR__ . "/includes/layouts/header.php";
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
-                                                <select name="number_of_dependents[2]" id="" class="form-control" required>
+                                                <select name="number_of_dependents[2]" id="" class="form-control" >
                                                     <option value="" selected disabled>Select</option>
                                                     <?php for($i = 0; $i <= 10; $i++): ?>
                                                         <option value="<?= $i?>"><?= $i?></option>
@@ -157,7 +157,7 @@ include __DIR__ . "/includes/layouts/header.php";
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
-                                                <select name="number_of_dependents[3]" id="" class="form-control" required>
+                                                <select name="number_of_dependents[3]" id="" class="form-control" >
                                                     <option value="" selected disabled>Select</option>
                                                     <?php for($i = 0; $i <= 10; $i++): ?>
                                                         <option value="<?= $i?>"><?= $i?></option>
@@ -167,7 +167,7 @@ include __DIR__ . "/includes/layouts/header.php";
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
-                                                <select name="number_of_dependents[4]" id="" class="form-control" required>
+                                                <select name="number_of_dependents[4]" id="" class="form-control" >
                                                     <option value="" selected disabled>Select</option>
                                                     <?php for($i = 0; $i <= 10; $i++): ?>
                                                         <option value="<?= $i?>"><?= $i?></option>
@@ -186,7 +186,7 @@ include __DIR__ . "/includes/layouts/header.php";
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
                                                 <select name="residential_status[1]" id="" class="form-control"
-                                                        required>
+                                                        >
                                                     <option value="" selected disabled>Select</option>
                                                     <option value="Renting">Renting</option>
                                                     <option value="Living in owned Property">Living in owned Property
@@ -198,7 +198,7 @@ include __DIR__ . "/includes/layouts/header.php";
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
                                                 <select name="residential_status[2]" id="" class="form-control"
-                                                        required>
+                                                        >
                                                     <option value="" selected disabled>Select</option>
                                                     <option value="Renting">Renting</option>
                                                     <option value="Living in owned Property">Living in owned Property
@@ -210,7 +210,7 @@ include __DIR__ . "/includes/layouts/header.php";
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
                                                 <select name="residential_status[3]" id="" class="form-control"
-                                                        required>
+                                                        >
                                                     <option value="" selected disabled>Select</option>
                                                     <option value="Renting">Renting</option>
                                                     <option value="Living in owned Property">Living in owned Property
@@ -222,7 +222,7 @@ include __DIR__ . "/includes/layouts/header.php";
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
                                                 <select name="residential_status[4]" id="" class="form-control"
-                                                        required>
+                                                        >
                                                     <option value="" selected disabled>Select</option>
                                                     <option value="Renting">Renting</option>
                                                     <option value="Living in owned Property">Living in owned Property
@@ -244,9 +244,9 @@ include __DIR__ . "/includes/layouts/header.php";
                                     <div class="row">
                                         <div class="col-md-2">Loan amount</div>
                                         <div class="col-md-2">Loan Terms in Years</div>
-                                        <div class="col-md-3">Loan Terms in Years</div>
                                         <div class="col-md-3">Int. Only Period</div>
                                         <div class="col-md-2">Actual Interest Rate</div>
+                                        <div class="col-md-3">Investment (Y/N)</div>
                                     </div>
                                 </div>
                             </div>
@@ -259,31 +259,32 @@ include __DIR__ . "/includes/layouts/header.php";
                                             <div class="col-md-2">
                                                 <div class="form-group mb-3">
                                                     <input type="number" name="loan_amount[<?= $i ?>]"
-                                                           class="form-control" required>
+                                                           class="form-control" >
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-group mb-3">
                                                     <input type="number" name="loan_terms_in_years[<?= $i ?>]"
-                                                           class="form-control" required>
+                                                           class="form-control" >
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group mb-3">
                                                     <input type="number" name="only_period[<?= $i ?>]"
-                                                           class="form-control" required>
+                                                           class="form-control" >
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group mb-3">
                                                     <input type="number" name="actual_interest_rate[<?= $i ?>]"
-                                                           class="form-control" required>
+                                                           class="form-control" >
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-group mb-3">
                                                     <select name="investment[<?= $i ?>]" id="investment[<?= $i ?>]"
-                                                            class="form-control" required>
+                                                            class="form-control" >
+                                                        <option value="" selected disabled>Select</option>
                                                         <option value="Y">Yes</option>
                                                         <option value="N">No</option>
                                                     </select>
@@ -330,7 +331,7 @@ include __DIR__ . "/includes/layouts/header.php";
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
-                                                <select name="credit_score[1]" id="" class="form-control" required>
+                                                <select name="credit_score[1]" id="" class="form-control" >
                                                     <option value="" selected disabled>Select</option>
                                                     <option value="Y">Yes</option>
                                                     <option value="N">N</option>
@@ -339,7 +340,7 @@ include __DIR__ . "/includes/layouts/header.php";
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
-                                                <select name="credit_score[2]" id="" class="form-control" required>
+                                                <select name="credit_score[2]" id="" class="form-control" >
                                                     <option value="" selected disabled>Select</option>
                                                     <option value="Y">Yes</option>
                                                     <option value="N">N</option>
@@ -348,7 +349,7 @@ include __DIR__ . "/includes/layouts/header.php";
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
-                                                <select name="credit_score[3]" id="" class="form-control" required>
+                                                <select name="credit_score[3]" id="" class="form-control" >
                                                     <option value="" selected disabled>Select</option>
                                                     <option value="Y">Yes</option>
                                                     <option value="N">N</option>
@@ -357,7 +358,7 @@ include __DIR__ . "/includes/layouts/header.php";
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
-                                                <select name="credit_score[4]" id="" class="form-control" required>
+                                                <select name="credit_score[4]" id="" class="form-control" >
                                                     <option value="" selected disabled>Select</option>
                                                     <option value="Y">Yes</option>
                                                     <option value="N">N</option>
@@ -599,25 +600,25 @@ include __DIR__ . "/includes/layouts/header.php";
                                             <div class="col-md-3">
                                                 <div class="form-group mb-3">
                                                     <input type="number" name="ownership_loan_app1[<?= $i ?>]"
-                                                           class="form-control" required>
+                                                           class="form-control" >
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group mb-3">
                                                     <input type="number" name="ownership_loan_app2[<?= $i ?>]"
-                                                           class="form-control" required>
+                                                           class="form-control" >
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group mb-3">
                                                     <input type="number" name="ownership_loan_app3[<?= $i ?>]"
-                                                           class="form-control" required>
+                                                           class="form-control" >
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group mb-3">
                                                     <input type="number" name="ownership_loan_app4[<?= $i ?>]"
-                                                           class="form-control" required>
+                                                           class="form-control" >
                                                 </div>
                                             </div>
                                         </div>
@@ -650,19 +651,19 @@ include __DIR__ . "/includes/layouts/header.php";
                                             <div class="col-md-2">
                                                 <div class="form-group mb-3">
                                                     <input type="number" name="existing_home_loan_limit[<?= $i ?>]"
-                                                           class="form-control" required>
+                                                           class="form-control" >
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-group mb-3">
                                                     <input type="number" name="existing_home_loan_loan_terms[<?= $i ?>]"
-                                                           class="form-control" required>
+                                                           class="form-control" >
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-group mb-3">
                                                     <input type="number" name="existing_home_loan_io_period[<?= $i ?>]"
-                                                           class="form-control" required>
+                                                           class="form-control" >
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
@@ -679,7 +680,7 @@ include __DIR__ . "/includes/layouts/header.php";
                                                 <div class="form-group mb-3">
                                                     <input type="number"
                                                            name="existing_home_loan_monthly_payments[<?= $i ?>]"
-                                                           class="form-control" required>
+                                                           class="form-control" >
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
@@ -704,7 +705,7 @@ include __DIR__ . "/includes/layouts/header.php";
                                         <div class="col-md-12">
                                             <div class="form-group mb-3">
                                                 <input type="number" name="monthly_personal_loan" class="form-control"
-                                                       required>
+                                                       >
                                             </div>
                                         </div>
                                     </div>
@@ -718,7 +719,7 @@ include __DIR__ . "/includes/layouts/header.php";
                                         <div class="col-md-12">
                                             <div class="form-group mb-3">
                                                 <input type="number" name="monthly_hire_purchase" class="form-control"
-                                                       required>
+                                                       >
                                             </div>
                                         </div>
                                     </div>
@@ -732,7 +733,7 @@ include __DIR__ . "/includes/layouts/header.php";
                                         <div class="col-md-12">
                                             <div class="form-group mb-3">
                                                 <input type="number" name="monthly_leaser_car_loan" class="form-control"
-                                                       required>
+                                                       >
                                             </div>
                                         </div>
                                     </div>
@@ -746,7 +747,7 @@ include __DIR__ . "/includes/layouts/header.php";
                                         <div class="col-md-12">
                                             <div class="form-group mb-3">
                                                 <input type="number" name="monthly_other_debts" class="form-control"
-                                                       required>
+                                                       >
                                             </div>
                                         </div>
                                     </div>
@@ -760,7 +761,7 @@ include __DIR__ . "/includes/layouts/header.php";
                                         <div class="col-md-12">
                                             <div class="form-group mb-3">
                                                 <input type="number" name="monthly_margin_terms" class="form-control"
-                                                       required>
+                                                       >
                                             </div>
                                         </div>
                                     </div>
@@ -773,7 +774,7 @@ include __DIR__ . "/includes/layouts/header.php";
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group mb-3">
-                                                <input type="number" name="card_limits" class="form-control" required>
+                                                <input type="number" name="card_limits" class="form-control" >
                                             </div>
                                         </div>
                                     </div>
@@ -786,7 +787,7 @@ include __DIR__ . "/includes/layouts/header.php";
                                         <div class="col-md-12">
                                             <div class="form-group mb-3">
                                                 <input type="number" name="other_monthly_repayments"
-                                                       class="form-control" required>
+                                                       class="form-control" >
                                             </div>
                                         </div>
                                     </div>
@@ -815,25 +816,25 @@ include __DIR__ . "/includes/layouts/header.php";
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
                                                 <input type="number" name="total_annual_rental[1]" class="form-control"
-                                                       required>
+                                                       >
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
                                                 <input type="number" name="total_annual_rental[2]" class="form-control"
-                                                       required>
+                                                       >
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
                                                 <input type="number" name="total_annual_rental[3]" class="form-control"
-                                                       required>
+                                                       >
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
                                                 <input type="number" name="total_annual_rental[4]" class="form-control"
-                                                       required>
+                                                       >
                                             </div>
                                         </div>
 
@@ -863,26 +864,26 @@ include __DIR__ . "/includes/layouts/header.php";
                                             <div class="col-md-3">
                                                 <div class="form-group mb-3">
                                                     <input type="number" name="ownership_home_loan_app_1[<?= $i ?>]"
-                                                           class="form-control" required>
+                                                           class="form-control" >
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group mb-3">
                                                     <input type="number" name="ownership_home_loan_app_2[<?= $i ?>]"
-                                                           class="form-control" required>
+                                                           class="form-control" >
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group mb-3">
                                                     <input type="number" name="ownership_home_loan_app_3[<?= $i ?>]"
-                                                           class="form-control" required>
+                                                           class="form-control" >
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group mb-3">
                                                     <div class="form-group mb-3">
                                                         <input type="number" name="ownership_home_loan_app_4[<?= $i ?>]"
-                                                               class="form-control" required>
+                                                               class="form-control" >
                                                     </div>
 
                                                 </div>
@@ -901,25 +902,25 @@ include __DIR__ . "/includes/layouts/header.php";
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
                                                 <input type="number" name="monthly_living_expensive[1]"
-                                                       class="form-control" required>
+                                                       class="form-control" >
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
                                                 <input type="number" name="monthly_living_expensive[2]"
-                                                       class="form-control" required>
+                                                       class="form-control" >
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
                                                 <input type="number" name="monthly_living_expensive[3]"
-                                                       class="form-control" required>
+                                                       class="form-control" >
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
                                                 <input type="number" name="monthly_living_expensive[4]"
-                                                       class="form-control" required>
+                                                       class="form-control" >
                                             </div>
                                         </div>
 
@@ -934,25 +935,25 @@ include __DIR__ . "/includes/layouts/header.php";
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
                                                 <input type="number" name="discretionary_living_expenses[1]"
-                                                       class="form-control" required>
+                                                       class="form-control" >
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
                                                 <input type="number" name="discretionary_living_expenses[2]"
-                                                       class="form-control" required>
+                                                       class="form-control" >
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
                                                 <input type="number" name="discretionary_living_expenses[3]"
-                                                       class="form-control" required>
+                                                       class="form-control" >
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group mb-3">
                                                 <input type="number" name="discretionary_living_expenses[4]"
-                                                       class="form-control" required>
+                                                       class="form-control" >
                                             </div>
                                         </div>
 
@@ -968,7 +969,7 @@ include __DIR__ . "/includes/layouts/header.php";
                                 <div class="col-md-2">
                                     <div class="form-group mb-3">
                                         <input type="number" name="monthly_property_expensive" class="form-control"
-                                               required>
+                                               >
                                     </div>
                                 </div>
                             </div>
