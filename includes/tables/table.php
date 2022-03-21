@@ -387,9 +387,8 @@
                     echo "-";
                 } ?></td>
             <td colspan="2"><?php try {
-                    echo $sheet->getCell('H92')->getOldCalculatedValue();
+                    echo $sheet->getCell('H92')->getCalculatedValue();
                 } catch (\PhpOffice\PhpSpreadsheet\Calculation\Exception $e) {
-                print_r($e);
                     echo "-";
                 } ?></td>
         </tr>
