@@ -69,7 +69,11 @@ $rows = [
             <tr>
                 <td><?= $name ?></td>
                 <?php foreach ($rows as $row): ?>
-                    <td><?= $sheet->getCell($row . $i)->getOldCalculatedValue() ?></td>
+                    <td><?php try {
+                            echo $sheet->getCell($row . $i)->getCalculatedValue();
+                        } catch (\PhpOffice\PhpSpreadsheet\Calculation\Exception $e) {
+                            echo "$ - ";
+                        } ?></td>
                 <?php endforeach; ?>
             </tr>
             <?php $i++; endforeach; ?>
