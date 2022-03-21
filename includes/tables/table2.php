@@ -29,6 +29,64 @@ $rows = [
         <thead>
         <tr>
             <th class="cell-200"></th>
+            <td class="cell-100"></td>
+            <td class="cell-100"></td>
+            <td class="cell-100"></td>
+            <td class="cell-100"></td>
+            <td class="cell-100"><?php try {
+                    echo $sheet->getCell('AE3')->getCalculatedValue();
+                } catch (\PhpOffice\PhpSpreadsheet\Calculation\Exception $e) {
+                    echo "$ - ";
+                } ?></td>
+            <td class="cell-100"><?php try {
+                    echo $sheet->getCell('AF3')->getCalculatedValue();
+                } catch (\PhpOffice\PhpSpreadsheet\Calculation\Exception $e) {
+                    echo "$ - ";
+                } ?></td>
+            <td class="cell-100"><?php try {
+                    echo $sheet->getCell('AG3')->getCalculatedValue();
+                } catch (\PhpOffice\PhpSpreadsheet\Calculation\Exception $e) {
+                    echo "$ - ";
+                } ?></td>
+            <td class="cell-100"><?php try {
+                    echo $sheet->getCell('AH3')->getCalculatedValue();
+                } catch (\PhpOffice\PhpSpreadsheet\Calculation\Exception $e) {
+                    echo "$ - ";
+                } ?></td>
+            <td class="cell-100"><?php try {
+                    echo $sheet->getCell('AI3')->getCalculatedValue();
+                } catch (\PhpOffice\PhpSpreadsheet\Calculation\Exception $e) {
+                    echo "$ - ";
+                } ?></td>
+            <td class="cell-100"><?php try {
+                    echo $sheet->getCell('AJ3')->getCalculatedValue();
+                } catch (\PhpOffice\PhpSpreadsheet\Calculation\Exception $e) {
+                    echo "$ - ";
+                } ?></td>
+            <td class="cell-100"><?php try {
+                    echo $sheet->getCell('AK3')->getCalculatedValue();
+                } catch (\PhpOffice\PhpSpreadsheet\Calculation\Exception $e) {
+                    echo "$ - ";
+                } ?></td>
+            <td class="cell-100"><?php try {
+                    echo $sheet->getCell('AL3')->getCalculatedValue();
+                } catch (\PhpOffice\PhpSpreadsheet\Calculation\Exception $e) {
+                    echo "$ - ";
+                } ?></td>
+            <td class="cell-100"><?php try {
+                    echo $sheet->getCell('AM3')->getCalculatedValue();
+                } catch (\PhpOffice\PhpSpreadsheet\Calculation\Exception $e) {
+                    echo "$ - ";
+                } ?></td>
+            <td class="cell-100"><?php try {
+                    echo $sheet->getCell('AN3')->getCalculatedValue();
+                } catch (\PhpOffice\PhpSpreadsheet\Calculation\Exception $e) {
+                    echo "$ - ";
+                } ?></td>
+            <td class="cell-100"></td>
+        </tr>
+        <tr>
+            <th class="cell-200"></th>
             <td class="cell-100">Ultra Prime</td>
             <td class="cell-100">Ultra Prime</td>
             <td class="cell-100">Ultra Prime</td>
