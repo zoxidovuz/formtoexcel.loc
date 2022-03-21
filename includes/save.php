@@ -208,7 +208,7 @@ if (isset($_POST['save_date'])) {
     }
 
 
-    $_SESSION['status'] = "Form was created successfully! You can <a href='/files/{$new_excel}.xlsx'>Download file</a>";
+//    $_SESSION['status'] = "Form was created successfully! You can <a href='/files/{$new_excel}.xlsx'>Download file</a>";
 
     header("Location: /print.php?file=" . $new_excel);
     die;

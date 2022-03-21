@@ -30,7 +30,7 @@
 
             if ($(this).find(":selected").val() === expectValue) {
                 if (currentKey[0] !== $(this).attr('data-key')) {
-                    appName = 'Applicant' + $(this).attr('data-key');
+                    appName = 'Applicant ' + $(this).attr('data-key');
                      optionList.push(`<option value="${appName}">${appName}</option>`);
                 }
 

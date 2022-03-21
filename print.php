@@ -11,8 +11,8 @@ if(!isset($_GET['file'])){
 $file = $_GET['file'];
 
 $spreadsheet = IOFactory::load("./files/{$file}.xlsx");
-$sheet = $spreadsheet->getSheetByName('Sample Calculator');
 
+$sheet = $spreadsheet->getSheetByName('Sample Calculator');
 
 
 
